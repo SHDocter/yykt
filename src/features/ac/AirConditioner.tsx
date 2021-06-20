@@ -10,7 +10,7 @@ import "./AirConditioner.scss";
 import { useAppSelector } from "../../app/hooks";
 
 import { AcMode, selectTemperature } from "./acSlice";
-import { ChiiLink, jumpToChii } from "../adsense";
+// import { ChiiLink, jumpToChii } from "../adsense";
 
 const acColor = {
   border: "#e0e0e0",
@@ -100,7 +100,7 @@ const AcDisplay = React.forwardRef((props: { mode: AcMode }, ref) => {
  function Actitle(props: any) {
   return (
     // <Box align="center" mt={12}>
-    <Box textAlign="center" mt={1}>
+    <Box textAlign="center" mt={0}>
       <a
         href={"https://live.bilibili.com/22870039"}
         title={pkg.description}
@@ -120,7 +120,7 @@ const AcDisplay = React.forwardRef((props: { mode: AcMode }, ref) => {
 function AcLogo(props: any) {
   return (
     // <Box align="center" mt={12}>
-    <Box textAlign="center" mt={1}>
+    <Box textAlign="center" mt={-1}>
       <a
         href={"https://live.bilibili.com/22870039"}
         title={pkg.description}
@@ -265,31 +265,31 @@ function EnergyLabel(props: any) {
 /**
  * 节能产品惠民工程
  */
-function EnergySavingLabel() {
-  return (
-    <div className="energy-saving-label">
-      <span className="label-font">&nbsp;羽月工程</span>
-      {/* eslint-disable-next-line */}
-      <a
-        className="ximalaya-link"
-        href={ChiiLink}
-        target="_blank"
-        onClick={() => {
-          jumpToChii();
-        }}
-      >
-        <img
-          className="ximalaya-logo"
-          src="/bilibili-logo.jpg"
-          alt="bilibili-logo"
-        />
-      </a>
-      {textLabel(10, "black", 1.2, 0.1, 0)}
-      {textLabel(10, "black", 1.2, 0.1, 0)}
-      {textLabel(11, "black", 2, 0.1, 0.25)}
-    </div>
-  );
-}
+// function EnergySavingLabel() {
+//   return (
+//     <div className="energy-saving-label">
+//       <span className="label-font">&nbsp;羽月工程</span>
+//       {/* eslint-disable-next-line */}
+//       <a
+//         className="ximalaya-link"
+//         href={ChiiLink}
+//         target="_blank"
+//         onClick={() => {
+//           jumpToChii();
+//         }}
+//       >
+//         <img
+//           className="ximalaya-logo"
+//           src="/bilibili-logo.jpg"
+//           alt="bilibili-logo"
+//         />
+//       </a>
+//       {textLabel(10, "black", 1.2, 0.1, 0)}
+//       {textLabel(10, "black", 1.2, 0.1, 0)}
+//       {textLabel(11, "black", 2, 0.1, 0.25)}
+//     </div>
+//   );
+// }
 
 /**
  * 风特效
@@ -335,7 +335,7 @@ export default function AirConditioner(props: {
         {/* <AirOutlet /> */}
         <AcStatus status={props.status} />
         <EnergyLabel className={classes.energyLabel} titleLength={6} />
-        {process.env.REACT_APP_DISABLE_ADSENSE ? null : <EnergySavingLabel />}
+        {/* {process.env.REACT_APP_DISABLE_ADSENSE ? null : <EnergySavingLabel />} */}
       </AcBorder>
       <Fade in={props.status} timeout={{ enter: 2500, exit: 1500 }}>
         <WindEffect />
