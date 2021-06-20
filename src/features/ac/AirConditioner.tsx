@@ -146,7 +146,7 @@ function AcLogo(props: any) {
  * @param props
  */
 function AcStatus(props: { status: boolean }) {
-  // 空调状态小灯
+  // 空调状态灯
   const led = { backgroundColor: props.status ? "#38F709" : acColor.border };
   const classes = useStyles(led);
   return (
